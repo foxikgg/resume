@@ -1,0 +1,908 @@
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #resume-content, #resume-content * {
+        visibility: visible;
+    }
+    #resume-content {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    .page-break {
+        page-break-after: always;
+    }
+    .non-break {
+        page-break-inside: avoid;
+    }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+
+  font-family: "Poppins", "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 25px;
+  padding: 40px 20px;
+  padding-top: 80px;
+
+  background-color: #fff;
+  color: #000;
+}
+
+/* Общие */
+
+.div-main {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 555px;
+  min-height: 842px;
+  gap: 20px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  gap: 16px;
+
+  border-radius: 12px;
+  padding: 12px;
+  justify-content: space-between;
+  word-break: break-word;
+
+  background-color: #f0f0f0;
+}
+
+.editing-highlight {
+  outline: 1px dashed #eb5757;
+  text-align: start;
+  background-color: rgba(249, 205, 205, 0.3);
+  border-radius: 2px;
+  color: #000;
+}
+
+.editing-highlight:focus {
+  outline: 1px solid #eb5757;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  color: #000;
+}
+
+.one-line-text {
+  width: 100%;
+
+  white-space: nowrap; /* Запрещает перенос текста */
+  overflow: hidden; /* Скрывает все, что не помещается */
+  text-overflow: ellipsis; /* Добавляет троеточие в конце */
+  word-wrap: break-word; /* Разбивает слова по необходимости */
+  word-break: break-word;
+}
+
+.h1 {
+  width: 100%;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+/* ========================== */
+/* Информация о пользователе */
+/* ========================== */
+
+.div-head-user-data {
+  display: flex;
+  width: 100%;
+  height: 124px;
+
+  gap: 20px;
+}
+
+.div-user-top-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  max-width: 268px;
+  height: 100%;
+}
+
+.div-user-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.name {
+  width: 267px;
+  height: 100%;
+}
+
+.languages {
+  max-width: 267px;
+}
+
+.div-languages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.div-language {
+  display: flex;
+  width: 100%;
+  height: 12px;
+
+  gap: 5px;
+
+  justify-content: start;
+  align-items: center;
+}
+
+.text-hello {
+  font-size: 10px;
+  font-weight: 500;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-name {
+  width: 100%;
+  font-weight: 700;
+  line-height: 104%;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-professiom {
+  font-size: 12px;
+  font-weight: 500;
+  color: #5c5c5c;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-language {
+  display: inline-block;
+  text-align: start;
+  justify-content: center;
+
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 104%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  width: 50px;
+  max-width: 56px;
+  height: 13px;
+}
+
+.line-rate-language {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 80px;
+  gap: 1px;
+
+  justify-content: start;
+  align-items: center;
+  font-size: 6px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 104%;
+}
+
+.div-line-language {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.text-language-quality {
+  font-size: 8px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 104%;
+  text-align: end;
+
+  width: 21px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 100%;
+}
+
+.line-language {
+  display: flex;
+  align-self: stretch;
+  max-width: 159px;
+
+  border-radius: 3px;
+  background-color: #28d979;
+}
+
+#line-russian {
+  width: 100%;
+}
+
+#line-english {
+  width: 20%;
+}
+
+#line-german {
+  width: 5%;
+}
+
+.img-user-photo {
+  display: flex;
+  width: 124px;
+  height: 124px;
+  border-radius: 12px;
+}
+
+/* ==================== */
+/* Навыки пользователя */
+/* ================== */
+
+.div-skills {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: stretch;
+  flex-direction: row;
+  justify-content: stretch;
+  gap: 20px;
+  align-items: stretch;
+  align-self: stretch;
+}
+
+.experience {
+  gap: 16px;
+  width: 78%;
+  flex: 3 1 0;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: stretch;
+  align-items: stretch;
+}
+
+.tools {
+  width: 20%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+
+  gap: 12px;
+}
+
+.div-all-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.div-experience-info {
+  display: flex;
+  width: 100%;
+  gap: 25px;
+}
+
+.div-all-detailed {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.div-detailed {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 8px;
+
+  background-color: #fff;
+}
+
+.div-experience-job-title {
+  display: flex;
+  flex-direction: column;
+  min-width: 124px;
+  max-width: 180px;
+}
+
+.div-tools-group {
+  display: flex;
+  padding: 15px 10px 10px 10px;
+  justify-content: flex-start;
+  gap: 10px;
+  align-self: stretch;
+  flex-wrap: wrap;
+  border-radius: 6px;
+  background: #fff;
+  position: relative;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.div-experience-text {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.div-experience-status {
+  display: flex;
+  width: 65px;
+  padding: 1px 16px;
+  border-radius: 100px;
+  background: rgba(126, 115, 18, 0.4);
+
+  color: #ddf163;
+  text-align: center;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 155%;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.job-responsibilities {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.text-experience-data {
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.title-job {
+  width: 100%;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.title-tools-group {
+  padding: 2px 6px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: 80px;
+  height: 11px;
+
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 100px;
+  background: #000;
+
+  color: #fff;
+  text-align: center;
+  font-size: 5px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 142%;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-job-meta {
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.job-responsibility-item {
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 12px */
+}
+
+/* ================= */
+/* Образование & Интересы & Контакты */
+/* =============== */
+
+.div-highlights {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  gap: 20px;
+}
+
+.education {
+  max-width: 268px;
+  flex: 1 1 0;
+  gap: 16px;
+}
+
+.div-interests-contacts {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 267px;
+}
+
+.div-all-education-detailed {
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-content: flex-start; /* или stretch */
+  min-height: 0;
+}
+
+.div-education-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.div-detailed-education-block {
+  display: flex;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+
+  border-radius: 10px;
+  background-color: #fff;
+  max-width: 116px;
+  flex: 1 1 116px;
+}
+
+.interests {
+  /* width: 242px; */
+  width: 100%;
+  height: 100%;
+}
+
+.contacts {
+  width: 100%;
+  /* width: 243px; */
+  height: 100%;
+  color: #fff;
+  background-color: #000;
+}
+
+.div-all-interests-detailed {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.div-interest {
+  max-width: 243px;
+
+  text-align: center;
+  border-radius: 100px;
+  padding: 4px 10px;
+
+  background-color: #fff;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  text-align: center;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%;
+}
+
+.title-contacts {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.contact {
+  color: #ddd;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.text-education-data {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 15px */
+}
+
+.text-education-particular {
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 12px */
+}
+
+.img-education-status {
+  display: flex;
+  padding: 2px 6px;
+}
+
+.svg-tools {
+  width: 20px;
+  height: auto;
+}
+
+/* ======== */
+/* Частное */
+/* ====== */
+
+.green {
+  background-color: #28d979;
+  color: #fff;
+}
+
+.green-text {
+  color: #28d979;
+}
+
+[contenteditable] {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.div-header-btn {
+  display: flex;
+  flex-direction: column;
+  max-width: 555px;
+  width: 100%;
+
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background-color: #fff;
+  padding: 12px 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 100px;
+}
+
+.div-btn {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 5px;
+  align-items: center;
+}
+
+.btn-edit {
+  all: unset;
+  display: flex;
+  width: 100%;
+  padding: 6px 14px;
+
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+
+  outline: 1px solid #4353ff;
+  color: #4353ff;
+  border-radius: 100px;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease, color 0.3s ease;
+}
+
+.save {
+  color: #28d979;
+  outline: 1px solid #28d979;
+}
+
+.reset {
+  color: #ff4a00;
+  outline: 1px solid #ff4a00;
+}
+
+.btn-edit:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+.btn-edit:active {
+  background-color: #4353ff;
+  color: #fff;
+  outline: none;
+}
+
+.save:active {
+  background-color: #28d979;
+  color: #fff;
+  outline: none;
+}
+
+.reset:active {
+  background-color: #ff4a00;
+  color: #fff;
+  outline: none;
+}
+
+.reset-modal {
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.reset-modal-content {
+  background: #fff;
+  padding: 25px;
+  margin: 10px;
+  border-radius: 25px;
+  text-align: center;
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.reset-modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+.reset-modal-text {
+  font-size: 18px;
+  font-weight: 500;
+
+}
+/* ========================= */
+/* Адаптивность — до 570px */
+/* ========================= */
+@media (max-width: 570px) {
+  body {
+    max-width: 570px;
+    padding: 10px;
+    padding-top: 80px;
+  }
+  .div-head-user-data {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .div-header-btn {
+    width: 95%;
+    max-width: 570px;
+  }
+
+  .name,
+  .languages {
+    width: 100%;
+    max-width: none;
+  }
+
+  .line-language {
+    max-width: 422px;
+  }
+
+  .div-skills {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .experience,
+  .tools {
+    width: 100%;
+  }
+
+  .tools {
+    order: 1;
+  }
+
+  .div-experience-info {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .div-experience-job-title {
+    max-width: 100%;
+  }
+
+  .div-highlights {
+    flex-direction: column;
+  }
+
+  .education,
+  .div-interests-contacts {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .div-all-education-detailed {
+    justify-content: center;
+  }
+
+  .div-detailed-education-block {
+    max-width: 100%;
+    flex: 1 1 116px;
+  }
+
+  .job-responsibilities {
+    padding-left: 12px;
+  }
+
+  .title-contacts {
+    font-size: 12px;
+  }
+
+  .contact {
+    font-size: 10px;
+  }
+
+  .div-btn {
+    width: 100%;
+  }
+
+  .div-all-tools {
+    width: 100%;
+  }
+
+  /* 2. div-detailed-education-block на всю ширину */
+  .div-detailed-education-block {
+    width: 100%;
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .div-head-user-data {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .div-user-top-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    height: 124px;
+  }
+
+  .languages {
+    width: 100%;
+  }
+
+  .hide-block {
+    display: none;
+  }
+}
+
+/* ========================== */
+/* Адаптивность — до 340px */
+/* ========================== */
+@media (max-width: 340px) {
+  body {
+    max-width: 340px;
+    padding: 20px 10px;
+    padding-top: 70px;
+  }
+
+  .img-user-photo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .div-experience-status {
+    font-size: 7px;
+    padding: 1 8px;
+  }
+
+  .title-tools-group {
+    font-size: 4px;
+    max-width: 70px;
+  }
+
+  .svg-tools {
+    width: 16px;
+  }
+
+  .title-job,
+  .text-professiom,
+  .text-language,
+  .text-hello {
+    font-size: 9px;
+  }
+
+  .div-user-top-row {
+    height: 80px;
+  }
+  .user-name {
+    font-size: 12px;
+  }
+
+  .title-contacts {
+    font-size: 11px;
+  }
+
+  .btn-edit {
+    font-size: 9px;
+    padding: 4px 10px;
+  }
+
+  .reset-modal-text {
+    font-size: 16px;
+  }
+}
