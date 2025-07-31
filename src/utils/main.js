@@ -11,7 +11,6 @@ import {
   setupResetModalListeners,
 } from "./reset.js";
 
-
 function saveToLocalStorage() {
   const data = {};
 
@@ -80,8 +79,8 @@ function initializeListEditing() {
 }
 
 function applyDesktopStylesForPDF() {
-  const style = document.createElement('style');
-  style.id = 'pdf-styles';
+  const style = document.createElement("style");
+  style.id = "pdf-styles";
   style.innerHTML = `
     @page {
       size: A4;
@@ -124,50 +123,51 @@ function applyDesktopStylesForPDF() {
 }
 
 function restoreOriginalStyles() {
-  const pdfStyles = document.getElementById('pdf-styles');
+  const pdfStyles = document.getElementById("pdf-styles");
   if (pdfStyles) {
     pdfStyles.remove();
   }
 }
 
 function generatePDF() {
-  const loader = document.createElement('div');
-  loader.style.position = 'fixed';
-  loader.style.top = '0';
-  loader.style.left = '0';
-  loader.style.width = '100%';
-  loader.style.height = '100%';
-  loader.style.backgroundColor = 'rgba(0,0,0,0.5)';
-  loader.style.display = 'flex';
-  loader.style.justifyContent = 'center';
-  loader.style.alignItems = 'center';
-  loader.style.zIndex = '9999';
-  loader.innerHTML = '<div style="color: white; font-size: 24px;">Generating PDF...</div>';
+  const loader = document.createElement("div");
+  loader.style.position = "fixed";
+  loader.style.top = "0";
+  loader.style.left = "0";
+  loader.style.width = "100%";
+  loader.style.height = "100%";
+  loader.style.backgroundColor = "rgba(0,0,0,0.5)";
+  loader.style.display = "flex";
+  loader.style.justifyContent = "center";
+  loader.style.alignItems = "center";
+  loader.style.zIndex = "9999";
+  loader.innerHTML =
+    '<div style="color: white; font-size: 24px;">Generating PDF...</div>';
   document.body.appendChild(loader);
 
-  const element = document.getElementById('resume-content');
+  const element = document.getElementById("resume-content");
 
   const opt = {
     margin: 10,
-    filename: 'resume.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
+    filename: "resume.pdf",
+    image: { type: "jpeg", quality: 0.98 },
     html2canvas: {
       scale: 2,
       useCORS: true,
       letterRendering: true,
-      allowTaint: true
+      allowTaint: true,
     },
     jsPDF: {
-      unit: 'mm',
-      format: 'a4',
-      orientation: 'portrait'
+      unit: "mm",
+      format: "a4",
+      orientation: "portrait",
     },
     pagebreak: {
-      mode: ['avoid-all', 'css', 'legacy'],
-      before: '.page-break',
-      after: ['#page2el', '#page3el'],
-      avoid: ['img', '.photo', '.non-break']
-    }
+      mode: ["avoid-all", "css", "legacy"],
+      before: ".page-break",
+      after: ["#page2el", "#page3el"],
+      avoid: ["img", ".photo", ".non-break"],
+    },
   };
 
   applyDesktopStylesForPDF();
@@ -176,16 +176,18 @@ function generatePDF() {
     .set(opt)
     .from(element)
     .toPdf()
-    .get('pdf')
-    .then(function(pdf) {
+    .get("pdf")
+    .then(function (pdf) {
       const totalPages = pdf.internal.getNumberOfPages();
       for (let i = 1; i <= totalPages; i++) {
         pdf.setPage(i);
         pdf.setFontSize(10);
         pdf.setTextColor(150);
-        pdf.text(`Page ${i} of ${totalPages}`,
+        pdf.text(
+          `Page ${i} of ${totalPages}`,
           pdf.internal.pageSize.getWidth() - 30,
-          pdf.internal.pageSize.getHeight() - 10);
+          pdf.internal.pageSize.getHeight() - 10
+        );
       }
     })
     .save()
@@ -194,12 +196,11 @@ function generatePDF() {
       document.body.removeChild(loader);
     })
     .catch((error) => {
-      console.error('PDF generation error:', error);
+      console.error("PDF generation error:", error);
       document.body.removeChild(loader);
-      alert('Error generating PDF. Please try again.');
+      alert("Error generating PDF. Please try again.");
     });
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
   loadFromLocalStorage();
@@ -210,7 +211,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const editBtn = document.getElementById("edit-toggle-btn");
   let isEditing = false;
 
-  document.getElementById('save-pdf-btn').addEventListener('click', generatePDF);
+  document
+    .getElementById("save-pdf-btn")
+    .addEventListener("click", generatePDF);
 
   editBtn.addEventListener("click", () => {
     isEditing = !isEditing;
@@ -239,6 +242,8 @@ document.addEventListener("DOMContentLoaded", () => {
       saveToLocalStorage();
     }
   });
+  Waves.attach(".waves-effect", ["waves-button", "waves-float"]);
+  Waves.init();
 
   document.getElementById("reset-btn").addEventListener("click", resetAll);
 });
