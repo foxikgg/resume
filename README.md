@@ -10,14 +10,10 @@
 
 1. Склонируй репозиторий:
    ```bash
-   git clone https://github.com/yourusername/cv-builder.git
-   cd cv-builder
+   git [clone https://github.com/yourusername/cv-builder.git](https://github.com/foxikgg/resume/)
    ```
 
-2. Запусти локальный сервер (например, с помощью Live Server в VSCode) или просто открой `cv.js` в браузере напрямую:
-   ```
-   file:///.../cv-builder/cv.js
-   ```
+2. Запусти локальный сервер (например, с помощью Live Server в VSCode)
 
 3. Начни редактирование: нажми кнопку **Редактировать**, внеси изменения и нажми **Применить**.
 
